@@ -13,8 +13,10 @@
   "scripts": {
     "dev": "nest start --watch",
     "dev:debug": "nest start --watch --debug",
+    "dev:worker": "nest start --watch --entryFile worker",
     "build": "nest build",
-    "start": "node dist/main",
+    "start": "node dist/main.js",
+    "start:worker": "node dist/worker.js",
     "clean": "node -e \"for (const d of ['dist', 'coverage', 'tsconfig.build.tsbuildinfo']) require('fs').rmSync(d, { recursive: true, force: true })\"",
     "typecheck": "tsc --noEmit",
     "lint": "oxlint --type-aware .",
