@@ -12,8 +12,8 @@ Goal: an empty but solid modular monolith with CI, so every later PR is checked 
 
 - [x] **T-01** Planning docs, agent rules, `CLAUDE.md`, `AGENTS.md`, dev scripts.
 - [ ] **T-02** Modular monolith skeleton: `src/main.ts` + `ApiModule`, `src/worker.ts` + `WorkerModule`, empty `identity`, `scanning`, `webhooks` modules with their `index.ts`, `src/shared`. Remove the starter app. Add `dev:worker`/`start:worker` scripts. Pick the import alias for context entry points. Add `dependency-cruiser` rules for layers and boundaries and a `bun run arch` script inside `check`. (D8, D9)
-- [ ] **T-03** `docker-compose.yml` with Postgres, Redis, ClamAV (raised stream limits), MinIO. `.env.example`.
-- [ ] **T-04** Config in `shared/infrastructure/config`: zod env schema, fail fast. (NFR-23)
+- [ ] **T-03** `docker-compose.yml` with Postgres, Redis, ClamAV (raised stream limits), MinIO. Credentials and ports match `.env.example`.
+- [ ] **T-04** Config in `shared/infrastructure/config`: zod env schema covering every key in `.env.example`, fail fast. E2E tests load `.env.test` over `.env`. (NFR-23)
 - [ ] **T-05** Shared kernel: `AggregateRoot`, `DomainEvent`, `DomainError`, `ConcurrencyError`, `Clock`, `IdGenerator`. Logging with `nestjs-pino`, request IDs, global filter mapping `DomainError` codes to HTTP. (NFR-30, NFR-31)
 - [ ] **T-06** CI workflow: install, `check`, build. Dependabot. GitHub issue and PR templates. (NFR-43)
 
