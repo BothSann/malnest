@@ -15,7 +15,9 @@ Read the docs that match your task before writing code:
 | `docs/PRODUCT_SPEC.md` | What are we building, for whom, and what is out of scope? |
 | `docs/BUSINESS_RULES.md` | Exact behavior rules (`BR-xx`): statuses, verdict logic, limits, access. |
 | `docs/REQUIREMENTS.md` | Testable requirements (`FR-xx`, `NFR-xx`) and endpoints. |
-| `docs/ARCHITECTURE.md` | Apps, modules, queues, scan flow, tokens, deployment. |
+| `docs/GLOSSARY.md` | The shared words for code, docs, and tests. |
+| `docs/ARCHITECTURE.md` | Modular monolith with DDD: bounded contexts, layers, CQRS, outbox, scan flow, tokens, deployment. |
+| `src/modules/<context>/README.md` | One context's aggregates, commands, queries, contract, and layout. |
 | `docs/DATA_MODEL.md` | Tables, columns, indexes, Redis keys, job payloads, report shape. |
 | `docs/TECH_STACK.md` | Allowed libraries and tools, and why. |
 | `docs/TASK_PLAN.md` | Milestones and tasks (`T-xx`) in build order. |

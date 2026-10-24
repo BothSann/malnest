@@ -51,7 +51,7 @@ Each requirement is testable. `FR` means functional (what the system does). `NFR
 | ID | Requirement | Rules |
 |---|---|---|
 | FR-40 | `GET /health` (liveness) and `GET /health/ready` (Postgres, Redis, storage, and in the worker ClamAV) need no auth. | |
-| FR-41 | OpenAPI docs are served at `/docs` when `NODE_ENV` is not `production`. | |
+| FR-41 | The OpenAPI spec is served at `/docs/openapi.json` and a Scalar docs page at `/docs`, both only when `NODE_ENV` is not `production`. | |
 | FR-42 | A daily job deletes old files and old records. | BR-35, BR-36 |
 
 ### Error format
@@ -105,8 +105,8 @@ All errors use one JSON shape:
 
 | ID | Requirement |
 |---|---|
-| NFR-40 | The verdict function has 100% branch coverage. |
-| NFR-41 | `libs/shared` has at least 90% line coverage. Each app has at least 70%. |
+| NFR-40 | `VerdictPolicy` has 100% branch coverage. |
+| NFR-41 | Every `domain/` folder has at least 90% line coverage. The whole project has at least 70%. |
 | NFR-42 | Every user story in `docs/PRODUCT_SPEC.md` has an e2e test. |
 | NFR-43 | `bun run lint`, `bun run test`, `bun run test:e2e`, and `bun run build` pass on every PR. |
 

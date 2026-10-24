@@ -56,7 +56,7 @@ queued ──► scanning ──► done
 
 **BR-16. Reasons.** Every verdict comes with a list of short, machine-readable reasons, for example `clamav:Eicar-Signature`, `virustotal:5/70`, `filetype:mismatch`, `archive:depth_limit`. A `clean` verdict has an empty list.
 
-**BR-17. Pure function.** The verdict is computed by one pure function from the engine results. It lives in `libs/shared` and has tests for every branch.
+**BR-17. Verdict policy.** The verdict is computed by the `VerdictPolicy` domain service from the scan results, with no I/O. It lives in `src/modules/scanning/domain/` and has tests for every branch.
 
 ## Uploads
 

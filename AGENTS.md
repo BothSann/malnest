@@ -25,6 +25,7 @@ The full coding rules live in `.claude/rules/`. Read the files that match your t
 
 - Use **bun** for packages and scripts. Run tests with `bun run test` / `bun run test:e2e` (Vitest), never `bun test`.
 - Relative imports end in `.js` (ESM, `nodenext`).
+- Modular monolith with DDD: a context imports another only through its `index.ts`. `domain/` never imports NestJS, Drizzle, or any I/O. See `docs/ARCHITECTURE.md`.
 - Never execute, import, or open an uploaded file. Only read its bytes.
 - Never upload a user's file to VirusTotal without opt-in. Look up by hash.
 - Tests use the EICAR test string only, never real malware.
