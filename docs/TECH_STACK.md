@@ -84,6 +84,7 @@ Pick from this list. Adding a new runtime dependency needs a reason in the PR an
 - **`bun test` is not `bun run test`.** The first starts Bun's own runner. Always use `bun run test`.
 - **MinIO:** the community edition stopped shipping new prebuilt images in 2025. Pin a known image tag for local use. If it becomes a problem, switch the local S3 store to SeaweedFS or Garage. No app code changes, because everything goes through the S3 API.
 - **ClamAV memory:** about 1.5 GB at runtime and briefly double during signature reloads. Do not run it on a 2 GB server.
+- **`.env` is not loaded for you.** `bun run` does not pass `.env` values to the Node scripts it starts (checked with bun 1.4.3). `@nestjs/config` must load the files itself: `.env.test` then `.env` in e2e tests, `.env` in development, and real env vars only in production.
 - **Swagger CLI plugin:** it only reads files ending in `.dto.ts` or `.entity.ts`, and it only runs during `nest build`. Vitest does not run it, so tests that check the spec need the plugin's generated metadata file (set up in T-39).
 - **ClamAV stream limit:** default 25 MB. Raise it (see `docs/ARCHITECTURE.md`).
 
